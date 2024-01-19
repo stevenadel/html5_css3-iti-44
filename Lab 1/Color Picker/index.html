@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #color-sample {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        input {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <h2>Color Picker</h2>
+
+    <div>
+        <label for="red-input">Red:</label>
+        <input type="range" id="red-input" min="0" max="255" value="0">
+        <output id="red-output">0</output>
+    </div>
+    <div>
+        <label for="green-input">Green:</label>
+        <input type="range" id="green-input" min="0" max="255" value="0">
+        <output id="green-output">0</output>
+    </div>
+    <div>
+        <label for="blue-input">Blue:</label>
+        <input type="range" id="blue-input" min="0" max="255" value="0">
+        <output id="blue-output">0</output>
+    </div>
+
+    <div id="color-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, veritatis excepturi delectus quidem minima at. Ducimus fugiat recusandae doloribus consequuntur.</div>
+
+    <script>
+        const redInput = document.getElementById('red-input');
+        const greenInput = document.getElementById('green-input');
+        const blueInput = document.getElementById('blue-input');
+
+        const redOutput = document.getElementById('red-output');
+        const greenOutput = document.getElementById('green-output');
+        const blueOutput = document.getElementById('blue-output');
+
+        const colorSample = document.getElementById('color-text');
+
+        function updateColor() {
+            const redValue = redInput.value;
+            const greenValue = greenInput.value;
+            const blueValue = blueInput.value;
+
+            redOutput.textContent = redValue;
+            greenOutput.textContent = greenValue;
+            blueOutput.textContent = blueValue;
+
+            const color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+            colorSample.style.color = color;
+        }
+
+        redInput.addEventListener('input', updateColor);
+        greenInput.addEventListener('input', updateColor);
+        blueInput.addEventListener('input', updateColor);
+
+        // Initial color update
+        updateColor();
+    </script>
+</body>
+</html>

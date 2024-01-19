@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Change Email Address</h1>
+        <form>
+            <div>
+                <input required type="text" pattern="[a-zA-Z]{2,}" id="name" placeholder="Username">
+                <output for="name" id="name-error" class="error-message">Please enter a valid username that contains only alphanumeric characters.</output>
+            </div>
+            <div>
+                <input required type="email" placeholder="Email" id="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                <output for="email" id="email-error" class="error-message">Please enter a valid email.</output>
+            </div>
+            <input type="submit" value="Change">
+        </form>
+    </div>
+</body>
+</html>

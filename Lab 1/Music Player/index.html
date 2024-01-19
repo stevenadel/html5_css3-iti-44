@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacetoon Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <main>
+        <img id="song-image" src="../resources/spacetoon.jpg" alt="Song image">
+        
+        <audio id="audio-player"></audio>
+        
+        <div class="media-controls">
+            <div>
+                <label for="volume-bar">Volume:</label>
+                <input type="range" min="0" max="1" id="volume-bar" value="1" step="0.1">
+            </div>
+            <div>
+                <label for="seek-bar">Progress:</label>
+                <input type="range" min="0" id="seek-bar" value="0">
+            </div>
+            <div>
+                <label for="rate-bar">Playback Speed:</label>
+                <input type="range" min="0.5" max="2" id="rate-bar" value="1" step="0.5">
+            </div>
+        </div>
+
+        <div class="media-controls mc-btns">
+            <button onclick="play()"><i class="fas fa-play"></i></button>
+            <button onclick="pause()"><i class="fas fa-pause"></i></button>
+            <button onclick="stop()"><i class="fas fa-stop"></i></button>
+        </div>
+        
+        <div class="song-picker">
+            <button onclick="playAudio('../resources/1.mp3', '../resources/1.png')">أبطال الديجيتال</button>
+            <button onclick="playAudio('../resources/2.mp3', '../resources/2.png')">الحديقة السرية</button>
+            <button onclick="playAudio('../resources/3.mp3', '../resources/3.png')">القناص (Hunter x Hunter)</button>
+            <button onclick="playAudio('../resources/4.mp3', '../resources/4.png')">عهد الأصدقاء</button>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+        #progress-bar {
+            width: 300px;
+            height: 20px;
+            border: 1px solid #ccc;
+            position: relative;
+            display: inline-block;
+        }
+
+        #filler {
+            height: 100%;
+            width: 0;
+            background-color: #4caf50;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h2>Progress Bar</h2>
+    <div id="progress-bar">
+        <div id="filler"></div>
+    </div>
+    <output id="percent-display">0%</output>
+
+    <script>
+        const filler = document.getElementById('filler');
+        const percentDisplay = document.getElementById('percent-display');
+        let progress = 0;
+
+        setInterval(() => {
+            progress <= 90 ? progress += 10 : progress = 0;
+            filler.style.width = progress + '%';
+            percentDisplay.textContent = progress + '%';
+        }, 500);
+    </script>
+</body>
+</html>
