@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circles Canvas</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <input type="color" id="color-input" value="#0000ff">
+    <button id="color-btn">Set Color</button>
+    <canvas width="800" height="500"></canvas>
+    <script>
+        let canvas = document.getElementsByTagName('canvas')[0];
+        let ctx = canvas.getContext('2d');
+
+        let colorInput = document.getElementById("color-input");
+
+        document.getElementById("color-btn").addEventListener("click", () => {
+            ctx.strokeStyle = colorInput.value;
+
+            setInterval(function () {
+                ctx.beginPath();
+                let x = Math.floor(Math.random() * canvas.width);
+                let y = Math.floor(Math.random() * canvas.height);
+                ctx.arc(x, y, 30, 0, Math.PI * 2);
+                ctx.stroke();
+    
+            }, 500)
+        });
+    </script>
+</body>
+</html>
