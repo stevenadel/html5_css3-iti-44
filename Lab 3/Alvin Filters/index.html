@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvin Filters</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+        h1 {
+            font-family: "Cedarville Cursive", cursive;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hey! We are the chipmunks.</h1>
+
+    <img id="image" src="alvin-chipmunks.jpg" alt="Your Image">
+
+    <button onclick="applyFilter('saturate', 2)">Saturate</button>
+    <button onclick="applyFilter('opacity', 0.5)">Opacity</button>
+    <button onclick="applyFilter('invert', 1)">Invert</button>
+    <button onclick="applyFilter('sepia', 1)">Sepia</button>
+    <button onclick="applyFilter('grayscale', 1)">Grayscale</button>
+
+    <script>
+        function applyFilter(filter, value) {
+            const image = document.getElementById('image');
+            image.style.filter = `${filter}(${value})`;
+        }
+    </script>
+</body>
+</html>
