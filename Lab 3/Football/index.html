@@ -3,36 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Football</title>
     <style>
-        img{
-            width:100px;
-            height:100px;
-            position: relative;
-            margin-top: 200px;
-            animation-name: hamada;
-            animation-duration: 2s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
-
+        body {
+            margin: 0;
         }
-        
-        @keyframes hamada {
-            0%{
-               left:0;
-               top:0;
+
+        .grass {
+            width: 100%;
+            position: absolute;
+            top: 500px;
+        }
+
+        .ball {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 500px;
+            transform: translate(-50%, -50%);
+            animation: move-ball 2s linear infinite alternate;
+        }
+
+        .player1, .player2 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 500px;
+            transform: translateY(-50%);
+        }
+
+        .player1 {
+            left: 0;
+        }
+
+        .player2 {
+            right: 0;
+        }
+
+        @keyframes move-ball {
+            0% {
+                left: 10%;
             }
 
-            100%{
-               left:100%;
-               top:0;
+            100% {
+                left: 90%;
             }
-            
         }
     </style>
 </head>
 <body>
-    <img src="images/ball.png"/>
+    <img class="grass" src="images/grass.png">
+    <img class="ball" src="images/ball.png"/>
+    <img class="player1" src="images/player1.png">
+    <img class="player2" src="images/player2.png">
 </body>
 </html>
